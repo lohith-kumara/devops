@@ -1,0 +1,30 @@
+groovy
+Copy code
+pipeline {
+    agent any
+
+    environment {
+        GIT_REPO = 'https://github.com/username/repo.git'
+        GIT_BRANCH = 'main'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: "${GIT_BRANCH}", url: "${GIT_REPO}"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+                sh './build.sh'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh './test.sh'
+            }
+        }
