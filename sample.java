@@ -4,7 +4,7 @@ class Sample{
 
      System.out.println("Welcome to Sharavesh Tech");
       
-      System.out.println("Welcome to Sharavesh Tech")
-         System.out.println("Welcome to Sharavesh Tech");
+     
+         
  }
 }
